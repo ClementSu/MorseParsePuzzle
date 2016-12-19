@@ -18,6 +18,11 @@ public class Main {
 			return;
 		}
 		
+		if (morseOg.length() > 99){
+			System.out.println("The first argument must be fewer than 100 characters.");
+			return;
+		}
+		
 		
 		UniqueSequences unique = new UniqueSequences(morseOg, rmMorse1, rmMorse2);
 		
