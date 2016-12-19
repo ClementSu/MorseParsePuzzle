@@ -13,7 +13,6 @@ public class UniqueSequences {
 	private String rmMorse1; //first removal
 	private String rmMorse2; //second removal
 	
-	
 	public UniqueSequences(String stringOg, String rmMorse1, String rmMorse2) {
 		
 		this.sequences1 = new HashMap<String, Object>();
@@ -23,10 +22,8 @@ public class UniqueSequences {
 		this.rmMorse2 = rmMorse2;
 	}
 
-	
 	private void findSequences(StringBuilder stringOg, int startIndex, String rmStr, int rmCharIndex, Map<String, Object> sequences){
-		
-		
+				
 		//base case: we've gone through each character in rmStr without returning, which means there was a match.
 		if (rmCharIndex == rmStr.length()){
 			sequences.put(stringOg.toString(), null);
@@ -60,18 +57,14 @@ public class UniqueSequences {
 		int rmCharIndex = 0;
 		findSequences(sbMorseOg, startIndex, this.rmMorse1, rmCharIndex, this.sequences1);
 		
-		
 		//Step Two remove morse sequence 
 		for(Map.Entry<String, Object> entry : sequences1.entrySet()) {
 			
-		    String key = entry.getKey();
-		    
-		    
+			String key = entry.getKey();
 			StringBuilder sbMorseOg2 = new StringBuilder(key);
 			rmCharIndex = 0;
 			startIndex = 0;
 			findSequences(sbMorseOg2, startIndex, this.rmMorse2, rmCharIndex, this.sequences2);
-		    
 		}	
 	}
 	
@@ -82,7 +75,6 @@ public class UniqueSequences {
 		for (int i = strOgStartIndex; i < morseStr.length(); i++){
 			if (morseStr.charAt(i) == searchChar){
 				charIndexes.add(i);
-				
 			}
 		}
 		

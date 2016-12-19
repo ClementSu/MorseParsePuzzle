@@ -23,9 +23,7 @@ public class Main {
 			return;
 		}
 		
-		
 		UniqueSequences unique = new UniqueSequences(morseOg, rmMorse1, rmMorse2);
-		
 		unique.parseMorseSequence();
 		
 		int count = unique.getUniqueCount();
